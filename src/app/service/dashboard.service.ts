@@ -10,8 +10,8 @@ import { RootObject } from '../modules/matchStats'
 
 export class DashboardService {
 
-  worldCupId:string="";
-  key:string=""
+  worldCupId:string;
+  key:string;
 
   constructor(private httpClient: HttpClient) { 
     this.worldCupId="3072"
