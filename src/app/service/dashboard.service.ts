@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { RootObject } from '../modules/matchStats'
+import {environment} from '../../environment/environment'
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class DashboardService {
 
 
   getAllMatch(): Observable<RootObject>{
-    return this.httpClient.get<RootObject>(`https://app.sportdataapi.com/api/v1/soccer/matches?apikey=${this.key}&season_id=${this.worldCupId}`);
+    return this.httpClient.get<RootObject>(`${environment.endPointMatchStats}${this.key}&season_id=${this.worldCupId}`);
   }
 
 }
