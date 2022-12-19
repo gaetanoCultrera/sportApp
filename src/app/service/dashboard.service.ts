@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { RootObject } from '../modules/matchStats'
+import { RootObject,Data } from '../modules/matchStats'
 import {environment} from '../../environment/environment'
 
 @Injectable({
@@ -15,7 +15,7 @@ export class DashboardService {
   key:string;
 
   constructor(private httpClient: HttpClient) { 
-    this.worldCupId="3072"
+    this.worldCupId="3236"
     this.key="c757e850-70dc-11ed-9db9-c16011d5dcb4"
   }
 

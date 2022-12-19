@@ -8,11 +8,13 @@ import { DashboardService } from './service/dashboard.service';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './pages/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

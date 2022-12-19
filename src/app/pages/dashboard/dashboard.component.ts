@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from 'src/app/service/dashboard.service';
-import { RootObject, Data } from 'src/app/modules/matchStats';
+import { Data,matchTable } from 'src/app/modules/matchStats';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,7 +9,7 @@ import { RootObject, Data } from 'src/app/modules/matchStats';
 })
 export class DashboardComponent implements OnInit {
 
-  match: Data[] = [];
+  userData: matchTable[] = [];
 
   constructor(private dashboardData: DashboardService) {
 
@@ -18,7 +18,18 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.dashboardData.getAllMatch().subscribe((result) => {
       console.log(result)
-      this.match = result.data
+      this.userData = result.data.map((item)=>{
+        let chosenData: matchTable = {
+          homeTeam: item.home_team.name,
+          awayTeam: item.away_team.name,
+          homeScore: item.stats.home_score,
+          awayScore: item.stats.away_score,
+          logoAwayTeam:item.away_team.logo,
+          logoHomeTeam:item.home_team.logo,
+          matchStart: item.match_start,
+        }
+        return chosenData
+      })
     })
   }
 
