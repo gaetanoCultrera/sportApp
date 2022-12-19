@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from 'src/app/service/dashboard.service';
-import { Data,matchTable } from 'src/app/modules/matchStats';
+import { matchTable } from 'src/app/modules/matchStats';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,12 +9,14 @@ import { Data,matchTable } from 'src/app/modules/matchStats';
 })
 export class DashboardComponent implements OnInit {
 
+  //this array containes raw data
   userData: matchTable[] = [];
 
   constructor(private dashboardData: DashboardService) {
 
   }
 
+  //data preparation for sending to cards, creation of object that it will create the matchTable
   ngOnInit(): void {
     this.dashboardData.getAllMatch().subscribe((result) => {
       console.log(result)
