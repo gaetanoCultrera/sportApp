@@ -7,14 +7,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { DashboardService } from './service/dashboard.service';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
+
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './pages/navbar/navbar.component';
+import { FooterComponent } from './pages/footer/footer.component';
+import { CardsComponent } from './pages/cards/cards.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule,
