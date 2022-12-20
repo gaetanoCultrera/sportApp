@@ -11,17 +11,18 @@ import { environment } from '../../environment/environment'
 
 export class DashboardService {
 
-  worldCupId: string;
+
+  serieAId: string;
   key: string;
 
   constructor(private httpClient: HttpClient) {
-    this.worldCupId = "3236"
+    this.serieAId = "2100" // I'm using old code because the new one has problems, new code 3236
     this.key = "c757e850-70dc-11ed-9db9-c16011d5dcb4"
   }
 
 
   getAllMatch(): Observable<RootObject> {
-    return this.httpClient.get<RootObject>(`${environment.endPointMatchStats}${this.key}&season_id=${this.worldCupId}`);
+    return this.httpClient.get<RootObject>(`${environment.endPointMatchStats}${this.key}&season_id=${this.serieAId}`)
   }
 
 }
